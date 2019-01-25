@@ -1,8 +1,7 @@
 import React from 'react';
-import { fetchCat } from '../actions'
 
 export default function Pet(props) {
-  console.log('pet props:',props);
+  
   const { pet, onAdoptPet } = props;
   
   return (
@@ -24,9 +23,10 @@ export default function Pet(props) {
         <dt>Story</dt>
         <dd>{pet.story}</dd>
       </dl>
-    <button type="button" onClick={onAdoptPet}>Adopt</button>
-    </div> 
+    <button type="button" onClick={onAdoptPet}>Adopt</button> 
+    </div>
   </section>
   </div>
   )
 }
+

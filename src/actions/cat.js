@@ -1,5 +1,5 @@
 import { API_BASE_URL } from '../config';
-console.log('API_BASE_URL on catsReducer:', API_BASE_URL);
+// console.log('API_BASE_URL on catsReducer:', API_BASE_URL);
 
 /* ========= ASYNC ACTIONS ========== */
 export const FETCH_CAT_REQUEST = 'FETCH_CAT_REQUEST';
@@ -32,7 +32,6 @@ export const fetchCat = () => dispatch => {
     if(!res.ok) {
       return Promise.reject(res.statusText);
     }
-    console.log('working cat success')
     return res.json()
   })
   .then( pet => dispatch(fetchCatSuccess(pet)))
