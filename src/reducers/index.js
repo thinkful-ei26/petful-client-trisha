@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
 import catsReducer from './cat';
-import dogsReducer from './dog';
+// import dogsReducer from './dog';
 
 const rootReducer = combineReducers({
   catsReducer,
-  dogsReducer
+  // dogsReducer
 });
 export default rootReducer;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { fetchCat } from '../actions'
 
 export default function Pet(props) {
   console.log('pet props:',props);
@@ -6,7 +7,6 @@ export default function Pet(props) {
   
   return (
   <div className="container">
-
     <section className="pet">
     <h2>{pet.name}</h2>
     <img src={pet.imageURL} alt={pet.imageDescription} />
