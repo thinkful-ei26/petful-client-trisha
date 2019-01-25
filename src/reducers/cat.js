@@ -40,18 +40,16 @@ export default function catsReducer(state = intitialState, action) {
     }
   }
   if(action.type === FETCH_CAT_SUCCESS) {
-    console.log(action.type);
-    console.log('state', state);
     return {
     ...state, 
     loading: false,
     error: null,
-    pet: action.data
+    pet: action.cat
   }
   } if (action.type === ADOPT_CAT_SUCCESS) {
     return {
       ...state,
-      loading: true,
+      loading: false,
       error: null,
       pet: null,
     }
@@ -59,7 +57,7 @@ export default function catsReducer(state = intitialState, action) {
   if(action.type === FETCH_CAT_ERROR) {
     return {
       ...state,
-      loading: true,
+      loading: false,
       error: action.error,
     }
   } 

@@ -44,12 +44,12 @@ export default function dogsReducer(state = intitialState, action) {
       ...state,
       loading: false,
       error: null,
-      pet: action.data
+      pet: action.dog
     }
   } if (action.type === ADOPT_DOG_SUCCESS) {
     return {
       ...state,
-      loading: true,
+      loading: false,
       error: null,
       pet: null,
     }
@@ -57,7 +57,7 @@ export default function dogsReducer(state = intitialState, action) {
   if (action.type === FETCH_DOG_ERROR) {
     return {
       ...state,
-      loading: true,
+      loading: false,
       error: action.error,
     }
   }
