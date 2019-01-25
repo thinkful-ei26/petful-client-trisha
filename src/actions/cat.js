@@ -38,28 +38,30 @@ export const fetchCat = () => dispatch => {
   .catch(error => dispatch(fetchCatError(error)))
 }
 
-// export const ADOPT_CAT_REQUEST = 'ADOPT_CAT_REQUEST';
-// export const adoptCatRequest = () => ({
-//   type: ADOPT_CAT_REQUEST
-// });
 
-// export const ADOPT_CAT_SUCCESS = 'ADOPT_CAT_SUCCESS';
-// export const adoptCatSuccess = () => ({
-//   type: ADOPT_CAT_SUCCESS
-// })
+/* ========= DELETE ASYNC ACTIONS ========== */
+export const ADOPT_CAT_REQUEST = 'ADOPT_CAT_REQUEST';
+export const adoptCatRequest = () => ({
+  type: ADOPT_CAT_REQUEST
+});
 
-// export const ADOPT_CAT_ERROR = 'ADOPT_CAT_ERROR';
-// export const adoptCatError = error => ({
-//   type: ADOPT_CAT_ERROR,
-//   error
-// });
+export const ADOPT_CAT_SUCCESS = 'ADOPT_CAT_SUCCESS';
+export const adoptCatSuccess = () => ({
+  type: ADOPT_CAT_SUCCESS
+})
 
-// export const adoptCat = () => dispatch => {
-//   dispatch(adoptCatRequest());
-//   return fetch(`${API_BASE_URL}/api/cat`, {
-//     method: 'DELETE'
-//   })
-//   .then(()=>dispatch(adoptCatSuccess()))
-//   .then(()=>dispatch(fetchCat()))
-//   .catch(err => dispatch(adoptCatError(err)));
-// }
+export const ADOPT_CAT_ERROR = 'ADOPT_CAT_ERROR';
+export const adoptCatError = error => ({
+  type: ADOPT_CAT_ERROR,
+  error
+});
+
+export const adoptCat = () => dispatch => {
+  dispatch(adoptCatRequest());
+  return fetch(`${API_BASE_URL}/api/cat`, {
+    method: 'DELETE'
+  })
+  .then(()=>dispatch(adoptCatSuccess()))
+  .then(()=>dispatch(fetchCat()))
+  .catch(err => dispatch(adoptCatError(err)));
+}

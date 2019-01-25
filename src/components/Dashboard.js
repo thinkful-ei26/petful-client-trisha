@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Pet from './Pet';
 import '../index.css';
 
-import { fetchCat } from '../actions/cat'
+import { fetchCat, adoptCat } from '../actions/cat'
 import { fetchDog } from '../actions/dog'
 
 export class Dashboard extends Component {
@@ -16,11 +16,15 @@ export class Dashboard extends Component {
   }
 
   render() {
-    const {catToAdopt, dogToAdopt, onAdoptPet } = this.props;
+    const {catToAdopt, dogToAdopt } = this.props;
     
     return (
       <main className="container">
-       <Pet pet={catToAdopt} onAdoptPet={() => console.log('clicked cat')} />
+       <Pet pet={catToAdopt} onAdoptPet={() => {
+          console.log('clicked cat');
+          this.props.dispatch(adoptCat())
+        }
+      }/>
        <Pet pet={dogToAdopt} onAdoptPet={() => console.log('clicked dog')}/>
      </main>
     );

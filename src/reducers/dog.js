@@ -23,8 +23,8 @@ export const dogsReducer = (state = intitialState, action) => {
     })
 
     case FETCH_DOG_SUCCESS :
-    console.log('dogReducer state:', state);
-    console.log('dogReducer action:', action);
+    // console.log('dogReducer state:', state);
+    // console.log('dogReducer action:', action);
       return Object.assign({}, state, {
         loading: false, 
         pet: action.pet,
