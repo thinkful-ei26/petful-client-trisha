@@ -4,7 +4,7 @@ import Pet from './Pet';
 import '../index.css';
 
 import { fetchCat, adoptCat } from '../actions/cat'
-import { fetchDog } from '../actions/dog'
+import { fetchDog, adoptDog } from '../actions/dog'
 
 export class Dashboard extends Component {
 
@@ -20,12 +20,16 @@ export class Dashboard extends Component {
     
     return (
       <main className="container">
-       <Pet pet={catToAdopt} onAdoptPet={() => {
+        <Pet pet={catToAdopt} onAdoptPet={() => {
           console.log('clicked cat');
           this.props.dispatch(adoptCat())
         }
       }/>
-       <Pet pet={dogToAdopt} onAdoptPet={() => console.log('clicked dog')}/>
+        <Pet pet={dogToAdopt} onAdoptPet={() => {
+          console.log('clicked dog');
+          this.props.dispatch(adoptDog())
+        }
+      }/>
      </main>
     );
   }

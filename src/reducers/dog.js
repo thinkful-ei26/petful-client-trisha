@@ -2,10 +2,10 @@ import {
   FETCH_DOG_REQUEST,
   FETCH_DOG_SUCCESS,
   FETCH_DOG_ERROR,
-  // ADOPT_CAT_REQUEST,
-  // ADOPT_CAT_SUCCESS,
-  // ADOPT_CAT_ERROR
-} from '../actions';
+  ADOPT_DOG_REQUEST,
+  ADOPT_DOG_SUCCESS,
+  ADOPT_DOG_ERROR
+} from '../actions/dog';
 
 const intitialState = {
   loading: false,
@@ -36,6 +36,26 @@ export const dogsReducer = (state = intitialState, action) => {
         loading: true,
         error: action.error
       })
+
+    case ADOPT_DOG_REQUEST :
+    return Object.assign({}, state, { 
+      loading: true, 
+      error: null 
+    })
+
+    case ADOPT_DOG_SUCCESS :
+    return Object.assign({}, state, {
+      loading: false, 
+      pet: [],
+      error: null
+    })
+  
+    case ADOPT_DOG_ERROR :
+    return Object.assign({}, state, { 
+      loading: true,
+      error: action.error
+    })
+
     default: return state;
   }
 }

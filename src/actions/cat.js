@@ -38,7 +38,6 @@ export const fetchCat = () => dispatch => {
   .catch(error => dispatch(fetchCatError(error)))
 }
 
-
 /* ========= DELETE ASYNC ACTIONS ========== */
 export const ADOPT_CAT_REQUEST = 'ADOPT_CAT_REQUEST';
 export const adoptCatRequest = () => ({
