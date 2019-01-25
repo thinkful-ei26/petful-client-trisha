@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Pet from './Pet';
 import './index.css';
 
 export default function Dashboard(props) {
-  const { catToAdopt, dogToAdopt } = props;
+  const { catToAdopt, dogToAdopt, onAdoptPet } = props;
   return (
     <main className="container">
 
@@ -24,7 +25,7 @@ export default function Dashboard(props) {
           <dt>Story</dt>
           <dd>{catToAdopt.story}</dd>
         </dl>
-        <button type="button">Adopt</button>
+        <button type="button" onAdopt={onAdoptPet}>Adopt</button>
         </div>
       </section>
 
